@@ -47,7 +47,7 @@ void setup() {
   Wire.write(open_pkt, open_pkt_size);
   Wire.endTransmission();
 
-  Serial.println("On command sent");
+  // Serial.println("On command sent");
 
   delay(100);
 
@@ -114,7 +114,7 @@ void enableAcc(uint8_t* period){
   Wire.beginTransmission(ADDR);
   Wire.write(acc_pkt, acc_pkt_size);
   Wire.endTransmission();
-  Serial.println("Accelerometer enable command sent");
+  // Serial.println("Accelerometer enable command sent");
 }
 
 void enableGyr(uint8_t* period){
@@ -146,7 +146,7 @@ void enableGyr(uint8_t* period){
   Wire.beginTransmission(ADDR);
   Wire.write(gyro_pkt, gyro_pkt_size);
   Wire.endTransmission();
-  Serial.println("Gyroscope enable command sent");
+  // Serial.println("Gyroscope enable command sent");
 }
 
 void enableMag(uint8_t* period){
@@ -178,7 +178,7 @@ void enableMag(uint8_t* period){
   Wire.beginTransmission(ADDR);
   Wire.write(mag_pkt, mag_pkt_size);
   Wire.endTransmission();
-  Serial.println("Magnetometer enable command sent");
+  // Serial.println("Magnetometer enable command sent");
 }
 
 void loop() {
@@ -194,7 +194,7 @@ void loop() {
   const static bool limit = false;
 
   if (count == 1000 && limit) {
-    Serial.println("1000 iterations finished");
+    // Serial.println("1000 iterations finished");
     digitalWrite(LED_BUILTIN, LOW);
     for (;;)
       ;
